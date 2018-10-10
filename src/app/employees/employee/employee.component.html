@@ -1,0 +1,54 @@
+<form [formGroup]="service.form" class="normal-forms">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <input type="hidden" formControlName="$key">
+            <mat-form-field>
+                <input formControlName="fullname" matInput placeholder="Full Name">
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="email" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="mobile" matInput placeholder="Mobile">
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="city" matInput placeholder="City">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile >
+            <div class="controles-container">
+                <div class="add-bottom-padding">
+                <mat-radio-group formControlName="gender">
+                    <mat-radio-button value="M">Male</mat-radio-button>
+                    <mat-radio-button value="F">Famale</mat-radio-button>
+                    <mat-radio-button value="O">Other</mat-radio-button>
+                </mat-radio-group>
+                </div>
+
+                <mat-form-field>
+                    <mat-select placeholder="Department" formControlName="department" >
+                      <mat-option>None</mat-option>
+                      <mat-option value="1">Dep 1</mat-option>
+                      <mat-option value="2">Dep 2</mat-option>
+                      <mat-option value="3">Dep 3</mat-option>
+                      <!--<mat-option *ngFor="let department of departments" value="{{department.id}}"> {{department.value}}</mat-option>-->
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="hiredate" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div class="add-bottom-padding">
+                        <mat-checkbox formControlName="ispermanent">Check me!</mat-checkbox>
+                </div>
+          </div>
+
+          
+        </mat-grid-tile>
+        </mat-grid-list>
+</form>
