@@ -35,10 +35,10 @@
                 <mat-form-field>
                     <mat-select placeholder="Department" formControlName="department" >
                       <mat-option>None</mat-option>
-                      <mat-option value="1">Dep 1</mat-option>
+                      <!--<mat-option value="1" >Dep 1</mat-option>
                       <mat-option value="2">Dep 2</mat-option>
-                      <mat-option value="3">Dep 3</mat-option>
-                      <!--<mat-option *ngFor="let department of departments" value="{{department.id}}"> {{department.value}}</mat-option>-->
+                      <mat-option value="3">Dep 3</mat-option>-->
+                      <mat-option *ngFor="let department of departments" value="{{department.id}}"> {{department.value}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
@@ -51,8 +51,8 @@
                         <mat-checkbox formControlName="ispermanent">Permanent Employee</mat-checkbox>
                 </div>
                 <div class="button-row">
-                    <button mat-raised-button color="primary" type="submit">Submit</button>
-                    <button mat-raised-button color="warn">Clear</button>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                    <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
                 </div>
           </div>
 
