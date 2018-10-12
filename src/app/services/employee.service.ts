@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl,Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,9 @@ export class EmployeeService {
   form: FormGroup = new FormGroup({
 
     $key        : new FormControl(null),
-    fullname    : new FormControl(''),
-    email       : new FormControl(''),
-    mobile      : new FormControl(''),
+    fullname    : new FormControl('',Validators.required),
+    email       : new FormControl('',Validators.email),
+    mobile      : new FormControl('',[Validators.required,Validators.minLength(10)]),
     city        : new FormControl(''),
     gender      : new FormControl(''),
     department  : new FormControl('0'),
