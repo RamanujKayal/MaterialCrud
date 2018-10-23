@@ -15,7 +15,7 @@
                 <input formControlName="mobile" matInput placeholder="Mobile*">
                 <mat-error *ngIf="service.form.controls['mobile'].error?.required">This field is mandatory</mat-error>
                 <mat-error *ngIf="service.form.controls['mobile'].error?.minLength">Minimum 8 character needed</mat-error>
-            </mat-form-field>
+            </mat-form-field> 
             <mat-form-field>
                 <input formControlName="city" matInput placeholder="City">
             </mat-form-field>
@@ -27,7 +27,7 @@
                 <div class="add-bottom-padding">
                 <mat-radio-group formControlName="gender">
                     <mat-radio-button value="M">Male</mat-radio-button>
-                    <mat-radio-button value="F">Famale</mat-radio-button>
+                    <mat-radio-button value="F">Female</mat-radio-button>
                     <mat-radio-button value="O">Other</mat-radio-button>
                 </mat-radio-group>
                 </div>
